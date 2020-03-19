@@ -32,8 +32,12 @@ x.start()
 y = threading.Thread(target=count2, args=(10,))
 y.start()
 
+
 x.join()
+
 y.join()
 
 time.sleep(0.5)
 print(ls)
+
+print(threading.stack_size())
