@@ -26,19 +26,27 @@ def count2(n):
         ls.append(i)
         time.sleep(0.02)
 
-x = threading.Thread(target=count, args=(10,))
-x.start()
 
-y = threading.Thread(target=count2, args=(10,))
-y.start()
+def count3(n):
+    for i in range(1, n*2):
+        print(i)
+        time.sleep(1)
 
+#x = threading.Thread(target=count, args=(10,))
+#x.start()
 
-x.join()
+#y = threading.Thread(target=count2, args=(10,))
+#y.start()
 
-y.join()
+z = threading.Thread(target=count3, args=(10,))
+z.start()
 
-time.sleep(0.5)
-print(ls)
+#x.join()
 
-print(threading.stack_size())
-#
+#y.join()
+
+z.join()
+
+#time.sleep(0.5)
+#print(ls)
+
